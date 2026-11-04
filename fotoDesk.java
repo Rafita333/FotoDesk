@@ -55,6 +55,7 @@ public class fotoDesk {
         System.out.print("Ingrese la hora del evento: ");
         return sc.nextLine();
     }
+    
 
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
@@ -63,19 +64,24 @@ public class fotoDesk {
         double servicioExtra = 0, precio = 0, subtotal = 0, precioIVA = 0, Total = 0;
 
         do {
+            //Menu principal(Juan)
             mostrarMenu();
+
             opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
                 case 1:
+                    //Solicitud de nombre y telefono (Rafael)
                     Nombre = Pedirnombre();
                     Telefono = pedirTelefono();
                     break;
 
                 case 2:
                     do {
+                        //Mostrar paquetes(Rafael)
                         mostrarPaquetes();
+
                         opcion2 = sc.nextInt();
                         sc.nextLine();
 
@@ -101,12 +107,14 @@ public class fotoDesk {
                         }
                     } while (!(opcion2 > 0 && opcion2 < 5));
 
+                    //DIA, MES, YEAR, HORA (Juan)
                     Dia = pedirDia();
                     Mes = pedirMes();
                     year = pedirYear();
                     Hora = pedirHora();
 
                     do {
+                        //Mañana o tarde (Corzo)
                         System.out.println("Elija si sera en la mañana o en la tarde");
                         System.out.println("1. Mañana");
                         System.out.println("2. Tarde");
@@ -128,6 +136,7 @@ public class fotoDesk {
                     break;
 
                 case 3:
+                    // Servicio extra (Corzo)
                     System.out.println("Desea añadir el servicio extra de dron?");
                     System.out.println("1. Si");
                     System.out.println("2. No");
@@ -146,6 +155,7 @@ public class fotoDesk {
                     break;
 
                 case 4:
+                    //Calculos
                     subtotal  = precio + servicioExtra;
                     precioIVA = subtotal * 0.16;
                     Total     = subtotal + precioIVA;
@@ -153,20 +163,25 @@ public class fotoDesk {
                     System.out.println("=====================================");
                     System.out.println("        REGISTRO DE SERVICIO");
                     System.out.println("=====================================");
+                    //Datos del cliente
                     System.out.println("- Datos del cliente -");
                     System.out.println("Nombre completo: " + Nombre);
                     System.out.println("Numero de contacto: " + Telefono);
                     System.out.println(" ");
+                    //Fecha del servicio
                     System.out.println("- Fecha del servicio -");
                     System.out.println(Dia + "/" + Mes + "/" + year);
                     System.out.println(Hora + " " + Horario);
                     System.out.println(" ");
+                    //Servicios
                     System.out.println("- Servicios -");
                     System.out.println(paquete);
                     System.out.println(" ");
+                    //Servicio extra
                     System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
                     System.out.println(Extra);
                     System.out.println(" ");
+                    //Precios y iva
                     System.out.println("Servicio - $" + precio);
                     System.out.println("Extra - $" + servicioExtra);
                     System.out.println("IVA - 16%");
