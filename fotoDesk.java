@@ -164,7 +164,7 @@ public class fotoDesk {
                     sc.nextLine();
 
                     // Establecer precio en caso de que se quiera (hacer funcion todo el if)
-                    if (opcion4 > 1 && opcion4 < 3) {
+                    if (opcion4 > 0 && opcion4 < 3) {
                         if (opcion4 == 1) {
                             servicioExtra = 300;
                         } else {
