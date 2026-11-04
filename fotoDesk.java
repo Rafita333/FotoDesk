@@ -63,6 +63,13 @@ public class fotoDesk {
         System.out.println(" ");
     }
 
+    static void fechaServicio(String Dia, String Mes, String year, String Hora, String Horario) {
+        System.out.println("- Fecha del servicio -");
+        System.out.println(Dia + "/" + Mes + "/" + year);
+        System.out.println(Hora + " " + Horario);
+        System.out.println(" ");
+    }
+
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
         String Nombre = "", Telefono = "", paquete = "", Dia = "", Mes = "", year = "",
@@ -173,10 +180,7 @@ public class fotoDesk {
                     datosCliente(Nombre,Telefono);
 
                     //Fecha del servicio
-                    System.out.println("- Fecha del servicio -");
-                    System.out.println(Dia + "/" + Mes + "/" + year);
-                    System.out.println(Hora + " " + Horario);
-                    System.out.println(" ");
+                     fechaServicio(Dia, Mes, year, Hora, Horario);
                     //Servicios
                     System.out.println("- Servicios -");
                     System.out.println(paquete);
