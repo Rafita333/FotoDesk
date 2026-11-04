@@ -55,7 +55,13 @@ public class fotoDesk {
         System.out.print("Ingrese la hora del evento: ");
         return sc.nextLine();
     }
-    
+
+    static void datosCliente(String Nombre, String Telefono){
+        System.out.println("- Datos del cliente -");
+        System.out.println("Nombre completo: " + Nombre);
+        System.out.println("Numero de contacto: " + Telefono);
+        System.out.println(" ");
+    }
 
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
@@ -155,7 +161,7 @@ public class fotoDesk {
                     break;
 
                 case 4:
-                    //Calculos
+                    //Calculos(No para funcion)
                     subtotal  = precio + servicioExtra;
                     precioIVA = subtotal * 0.16;
                     Total     = subtotal + precioIVA;
@@ -163,11 +169,9 @@ public class fotoDesk {
                     System.out.println("=====================================");
                     System.out.println("        REGISTRO DE SERVICIO");
                     System.out.println("=====================================");
-                    //Datos del cliente
-                    System.out.println("- Datos del cliente -");
-                    System.out.println("Nombre completo: " + Nombre);
-                    System.out.println("Numero de contacto: " + Telefono);
-                    System.out.println(" ");
+                    //Datos del cliente (Rafael)
+                    datosCliente(Nombre,Telefono);
+
                     //Fecha del servicio
                     System.out.println("- Fecha del servicio -");
                     System.out.println(Dia + "/" + Mes + "/" + year);
