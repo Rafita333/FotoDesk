@@ -69,7 +69,7 @@ public class fotoDesk {
         System.out.println(Hora + " " + Horario);
         System.out.println(" ");
     }
-    
+
     static void servicio(String paquete){
         System.out.println("- Servicios -");
         System.out.println(paquete);
@@ -203,7 +203,7 @@ public class fotoDesk {
                     //Datos del cliente (Rafael)
                     datosCliente(Nombre,Telefono);
 
-                    //Fecha del servicio
+                    //Fecha del servicio (Juan)
                      fechaServicio(Dia, Mes, year, Hora, Horario);
                     // Servicios (Isaac Mercado)
                     servicio(paquete);
