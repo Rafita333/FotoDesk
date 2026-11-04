@@ -69,6 +69,30 @@ public class fotoDesk {
         System.out.println(Hora + " " + Horario);
         System.out.println(" ");
     }
+    
+    static void servicio(String paquete){
+        System.out.println("- Servicios -");
+        System.out.println(paquete);
+        System.out.println(" ");
+    }
+    
+    static void servicioExtra(String Extra){
+        System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
+        System.out.println(Extra);
+        System.out.println(" ");
+    }
+
+
+    static void precioIVA(double subtotal, double precio, double servicioExtra, double Total){
+        System.out.println("Servicio - $" + precio);
+        System.out.println("Extra - $" + servicioExtra);
+        System.out.println("IVA - 16%");
+        System.out.println(" ");
+        System.out.println("-------------------");
+        System.out.println("Subtotal: $" + subtotal);
+        System.out.println("Total: $" + Total);
+        System.out.println("=====================================");
+    }
 
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
@@ -181,23 +205,14 @@ public class fotoDesk {
 
                     //Fecha del servicio
                      fechaServicio(Dia, Mes, year, Hora, Horario);
-                    //Servicios
-                    System.out.println("- Servicios -");
-                    System.out.println(paquete);
-                    System.out.println(" ");
-                    //Servicio extra
-                    System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
-                    System.out.println(Extra);
-                    System.out.println(" ");
-                    //Precios y iva
-                    System.out.println("Servicio - $" + precio);
-                    System.out.println("Extra - $" + servicioExtra);
-                    System.out.println("IVA - 16%");
-                    System.out.println(" ");
-                    System.out.println("-------------------");
-                    System.out.println("Subtotal: $" + subtotal);
-                    System.out.println("Total: $" + Total);
-                    System.out.println("=====================================");
+                    // Servicios (Isaac Mercado)
+                    servicio(paquete);
+
+                    // Servicio extra(Isaac Mercado)
+                    servicioExtra(Extra);
+
+                    // Precios e IVA(Isaac Mercado)
+                    precioIVA(subtotal, precio, servicioExtra, Total);
                     break;
 
                 default:
