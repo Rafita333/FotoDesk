@@ -63,6 +63,37 @@ public class fotoDesk {
         System.out.println(" ");
     }
 
+    static void fechaServicio(String Dia, String Mes, String year, String Hora, String Horario) {
+        System.out.println("- Fecha del servicio -");
+        System.out.println(Dia + "/" + Mes + "/" + year);
+        System.out.println(Hora + " " + Horario);
+        System.out.println(" ");
+    }
+
+    static void servicio(String paquete){
+        System.out.println("- Servicios -");
+        System.out.println(paquete);
+        System.out.println(" ");
+    }
+    
+    static void servicioExtra(String Extra){
+        System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
+        System.out.println(Extra);
+        System.out.println(" ");
+    }
+
+
+    static void precioIVA(double subtotal, double precio, double servicioExtra, double Total){
+        System.out.println("Servicio - $" + precio);
+        System.out.println("Extra - $" + servicioExtra);
+        System.out.println("IVA - 16%");
+        System.out.println(" ");
+        System.out.println("-------------------");
+        System.out.println("Subtotal: $" + subtotal);
+        System.out.println("Total: $" + Total);
+        System.out.println("=====================================");
+    }
+
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
         String Nombre = "", Telefono = "", paquete = "", Dia = "", Mes = "", year = "",
@@ -173,27 +204,18 @@ public class fotoDesk {
                     datosCliente(Nombre,Telefono);
 
                     //Fecha del servicio
-                    System.out.println("- Fecha del servicio -");
-                    System.out.println(Dia + "/" + Mes + "/" + year);
-                    System.out.println(Hora + " " + Horario);
-                    System.out.println(" ");
-                    //Servicios
-                    System.out.println("- Servicios -");
-                    System.out.println(paquete);
-                    System.out.println(" ");
-                    //Servicio extra
-                    System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
-                    System.out.println(Extra);
-                    System.out.println(" ");
-                    //Precios y iva
-                    System.out.println("Servicio - $" + precio);
-                    System.out.println("Extra - $" + servicioExtra);
-                    System.out.println("IVA - 16%");
-                    System.out.println(" ");
-                    System.out.println("-------------------");
-                    System.out.println("Subtotal: $" + subtotal);
-                    System.out.println("Total: $" + Total);
-                    System.out.println("=====================================");
+                     fechaServicio(Dia, Mes, year, Hora, Horario);
+                    
+                    // Servicios
+                    servicio(paquete);
+
+                    // Servicio extra
+                    servicioExtra(Extra);
+
+                    // Precios e IVA
+                    precioIVA(subtotal, precio, servicioExtra, Total);
+
+                     
                     break;
 
                 default:
