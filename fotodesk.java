@@ -206,13 +206,13 @@ public class fotoDesk {
                     //Fecha del servicio
                      fechaServicio(Dia, Mes, year, Hora, Horario);
                     
-                    // Servicios
+                    // Servicios (Isaac Mercado)
                     servicio(paquete);
 
-                    // Servicio extra
+                    // Servicio extra(Isaac Mercado)
                     servicioExtra(Extra);
 
-                    // Precios e IVA
+                    // Precios e IVA(Isaac Mercado)
                     precioIVA(subtotal, precio, servicioExtra, Total);
 
                      
