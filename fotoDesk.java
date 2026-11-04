@@ -4,8 +4,6 @@ public class fotoDesk {
 
     static Scanner sc = new Scanner(System.in);
 
-    // Declaracion de variables (inicializadas porque Java lo exige antes de
-    // usarlas)
     static void mostrarMenu() {
         System.out.println("=====================================");
         System.out.println("              FotoDesk");
@@ -20,17 +18,13 @@ public class fotoDesk {
     }
 
     static String Pedirnombre() {
-        String Nombre;
-        System.out.println("Escriba su nombre: ");
-        Nombre = sc.nextLine();
-        return Nombre;
+        System.out.print("Escriba su nombre: ");
+        return sc.nextLine();
     }
 
     static String pedirTelefono() {
-        String Telefono;
-        System.out.println("Ingrese el Numero del cliente:");
-        Telefono = sc.nextLine();
-        return Telefono;
+        System.out.print("Ingrese el Numero del cliente: ");
+        return sc.nextLine();
     }
 
     static void mostrarPaquetes() {
@@ -40,70 +34,70 @@ public class fotoDesk {
         System.out.println("3. Fotografia empresarial para negocios");
         System.out.println("4. Fotografia de productos");
         System.out.println("Ingrese una de las opciones: ");
-
     }
 
     static String pedirDia() {
-        String Dia;
-        System.out.println("Ingrese el día del evento: ");
-        Dia = sc.nextLine();
-        return Dia;
-
+        System.out.print("Ingrese el día del evento: ");
+        return sc.nextLine();
     }
 
     static String pedirMes() {
-        String Mes;
-        System.out.println("Ingrese el mes del evento: ");
-        Mes = sc.nextLine();
-        return Mes;
-
+        System.out.print("Ingrese el mes del evento: ");
+        return sc.nextLine();
     }
 
     static String pedirYear() {
-        String year;
-        System.out.println("Ingrese el año del evento: ");
-        year = sc.nextLine();
-        return year;
-
+        System.out.print("Ingrese el año del evento: ");
+        return sc.nextLine();
     }
 
     static String pedirHora() {
-        String Hora;
-        System.out.println("Ingrese la hora del evento: ");
-        Hora = sc.nextLine();
-        return Hora;
+        System.out.print("Ingrese la hora del evento: ");
+        return sc.nextLine();
+    }
 
+    static void datosCliente(String Nombre, String Telefono) {
+        System.out.println("- Datos del cliente -");
+        System.out.println("Nombre completo: " + Nombre);
+        System.out.println("Numero de contacto: " + Telefono);
+        System.out.println(" ");
+    }
+
+    static void fechaServicio(String Dia, String Mes, String year, String Hora, String Horario) {
+        System.out.println("- Fecha del servicio -");
+        System.out.println(Dia + "/" + Mes + "/" + year);
+        System.out.println(Hora + " " + Horario);
+        System.out.println(" ");
     }
 
     public static void main(String[] args) {
         int opcion = 0, opcion2 = 0, opcion3 = 0, opcion4 = 0;
-        String Nombre = "", Telefono = "", paquete = "", Dia = "", Mes = "", year = "", Horario = "", Hora = "",
-                Extra = "";
+        String Nombre = "", Telefono = "", paquete = "", Dia = "", Mes = "", year = "",
+                Horario = "", Hora = "", Extra = "";
         double servicioExtra = 0, precio = 0, subtotal = 0, precioIVA = 0, Total = 0;
-        // Main:
-        // Mostrar menu principal
+
         do {
+            // Menu principal(Juan)
             mostrarMenu();
+
             opcion = sc.nextInt();
             sc.nextLine();
-            // Segun opcion el aparatado al que se ingresara:
+
             switch (opcion) {
                 case 1:
-                    // Pedir Nombre (listo)
+                    // Solicitud de nombre y telefono (Rafael)
                     Nombre = Pedirnombre();
-                    // Pedir Telefono (listo)
                     Telefono = pedirTelefono();
                     break;
 
                 case 2:
                     do {
-                        // Seleccion de opcion paquetes fotograficos:
-                        // Mostrar paquetes
+                        // Mostrar paquetes(Rafael)
                         mostrarPaquetes();
 
                         opcion2 = sc.nextInt();
                         sc.nextLine();
-                        // Asignacion de paquete segun la eleccion
+
                         switch (opcion2) {
                             case 1:
                                 paquete = "15 años";
@@ -126,22 +120,21 @@ public class fotoDesk {
                         }
                     } while (!(opcion2 > 0 && opcion2 < 5));
 
-                    // Peticion de hora, mes, dia y año al conseguir el paquete:
-                    // Pedir fecha del evento (todo lo de abajo)
+                    // DIA, MES, YEAR, HORA (Juan)
                     Dia = pedirDia();
                     Mes = pedirMes();
                     year = pedirYear();
                     Hora = pedirHora();
 
-                    // Eleccion de mañana o tarde
                     do {
-                        // Mañana_o_Tarde (todo si se puede)
+                        // Mañana o tarde (Corzo)
                         System.out.println("Elija si sera en la mañana o en la tarde");
                         System.out.println("1. Mañana");
                         System.out.println("2. Tarde");
                         System.out.println("Ingrese la opcion:");
                         opcion3 = sc.nextInt();
                         sc.nextLine();
+
                         switch (opcion3) {
                             case 1:
                                 Horario = "a.m";
@@ -156,57 +149,47 @@ public class fotoDesk {
                     break;
 
                 case 3:
-                    // Servicio extra de dron (todo lo de aqui del dron)
+                    // Servicio extra (Corzo)
                     System.out.println("Desea añadir el servicio extra de dron?");
                     System.out.println("1. Si");
                     System.out.println("2. No");
                     opcion4 = sc.nextInt();
                     sc.nextLine();
 
-                    // Establecer precio en caso de que se quiera (hacer funcion todo el if)
-                    if (opcion4 > 0 && opcion4 < 3) {
-                        if (opcion4 == 1) {
-                            servicioExtra = 300;
-                        } else {
-                            servicioExtra = 0;
-                        }
-                    }
-                    // Ver si es o no checando el precio (mismo caso del de arriba el if completo)
-                    if (servicioExtra > 0) {
+                    if (opcion4 == 1) {
+                        servicioExtra = 300;
                         Extra = "SI";
-                    } else {
+                    } else if (opcion4 == 2) {
+                        servicioExtra = 0;
                         Extra = "NO";
+                    } else {
+                        System.out.println("Opcion no valida");
                     }
                     break;
 
                 case 4:
-                    // Calculo del total (Hacer calculo funcion)
-                    subtotal = precio;
-                    precioIVA = (precio + servicioExtra) * .16;
-                    Total = precioIVA + subtotal;
-                    // Generacion del ticket
+                    // Calculos(No para funcion)
+                    subtotal = precio + servicioExtra;
+                    precioIVA = subtotal * 0.16;
+                    Total = subtotal + precioIVA;
+
                     System.out.println("=====================================");
                     System.out.println("        REGISTRO DE SERVICIO");
                     System.out.println("=====================================");
-                    // (Imprimir datos del cliente)
-                    System.out.println("- Datos del cliente -");
-                    System.out.println("Nombre completo: " + Nombre);
-                    System.out.println("Numero de contacto: " + Telefono);
-                    System.out.println(" ");
-                    // (Imprimir fecha del servicio)
-                    System.out.println("- Fecha del servicio -");
-                    System.out.println(Dia + "/" + Mes + "/" + year);
-                    System.out.println(Hora + " " + Horario);
-                    System.out.println(" ");
+                    // Datos del cliente (Rafael)
+                    datosCliente(Nombre, Telefono);
 
+                    // Fecha del servicio (Juan)
+                    fechaServicio(Dia, Mes, year, Hora, Horario);
+                    // Servicios
                     System.out.println("- Servicios -");
                     System.out.println(paquete);
                     System.out.println(" ");
-
+                    // Servicio extra
                     System.out.println("¿Desea agregar servicio extra Fotografia con Dron?");
                     System.out.println(Extra);
                     System.out.println(" ");
-                    // (Imprimir precios)
+                    // Precios y iva
                     System.out.println("Servicio - $" + precio);
                     System.out.println("Extra - $" + servicioExtra);
                     System.out.println("IVA - 16%");
@@ -218,9 +201,6 @@ public class fotoDesk {
                     break;
 
                 default:
-                    // Si es 5 mandar otro mensaje y si no es una de las opciones entonces "opcion
-                    // no valida"
-                    // (Validar opcion todo el if)
                     if (opcion == 5) {
                         System.out.println("Gracias por utilizar el programa");
                     } else {
@@ -229,5 +209,7 @@ public class fotoDesk {
             }
 
         } while (opcion != 5);
+
+        sc.close();
     }
 }
